@@ -5,6 +5,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.Select;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.NoSuchElementException;
 import java.util.Set;
 
 public class BrowserUtils {
@@ -50,6 +51,14 @@ public class BrowserUtils {
 
     public static void goToURL(String URL) {
         Driver.getDriver().get(URL);
+    }
+
+    public static void verifyElementDisplayed(WebElement element){
+        try {
+            Assert.assertTrue("Element not visible"+element, element.isDisplayed());
+        }catch (NoSuchElementException e){
+            Assert.fail("Element not found"+element);
+        }
     }
 
 
