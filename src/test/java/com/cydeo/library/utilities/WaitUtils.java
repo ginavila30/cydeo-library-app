@@ -16,4 +16,11 @@ public class WaitUtils {
        wait = new WebDriverWait(Driver.getDriver(), timeOut);
        wait.until(ExpectedConditions.invisibilityOf(element));
     }
+
+    public static void waitUrlContains(String urlContains, int timeOut) {
+        wait = new WebDriverWait(Driver.getDriver(), timeOut);
+        wait.until(ExpectedConditions.urlContains(urlContains));
+    }
+
+
 }
