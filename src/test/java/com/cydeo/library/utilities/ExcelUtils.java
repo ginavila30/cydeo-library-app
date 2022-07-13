@@ -64,4 +64,8 @@ public class ExcelUtils {
         }
 
     }
+
+    public static int getLastRow(){
+        return excelSheet.getLastRowNum();
+    }
 }
