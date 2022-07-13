@@ -1,14 +1,10 @@
 package com.cydeo.library.step_definitions;
 
 import com.cydeo.library.pages.LoginPage;
-import com.cydeo.library.utilities.BrowserUtils;
-import com.cydeo.library.utilities.ConfigurationReader;
-import com.cydeo.library.utilities.Driver;
-import com.cydeo.library.utilities.WaitUtils;
+import com.cydeo.library.utilities.*;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
-import org.junit.Assert;
 
 public class Login_StepDefinitions {
 
@@ -24,7 +20,7 @@ public class Login_StepDefinitions {
 
     @Then("URL should contains {string}")
     public void url_should_contains(String expectedUrl) {
-        WaitUtils.waitUrlContains(expectedUrl,10);
+        WaitUtils.waitUrlContains(expectedUrl, Constant.WAIT_TIME_OUTS);
         BrowserUtils.verifyURLContains(expectedUrl);
     }
 
