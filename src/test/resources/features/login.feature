@@ -14,6 +14,16 @@ Feature: login
       | student1@library   | i2A9TgXa | Library   | books       |
       | librarian1@library | rs4BNN9G | Library   | dashboard   |
 
+  Scenario Outline: User logs in with invalid username and invalid password
+
+    Given User is on login page
+    When  User enters invalid username "<Username>" and User enters invalid password "<Password>"
+    Then User should see error message "Sorry, Wrong Email or Password"
+
+    Examples:
+      | Username           | Password |
+      | student1@library   | i2A9TgXa |
+      | librarian1@library | rs4BNN9G |
 
 
 

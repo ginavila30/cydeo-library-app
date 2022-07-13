@@ -12,10 +12,16 @@ public class LoginPage {
 
     @FindBy(id = "inputEmail")
     private WebElement usernameInput;
+
     @FindBy (id = "inputPassword")
     private WebElement passwordInput;
+
     @FindBy(xpath = "//button[@type=\"submit\"]")
     private WebElement button;
+
+    @FindBy(css = ".alert")
+    public WebElement errorMessage;
+
 
 
     public void login(String username, String password){
