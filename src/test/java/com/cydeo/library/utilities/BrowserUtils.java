@@ -5,11 +5,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
-
-import java.util.ArrayList;
-import java.util.List;
-import java.util.NoSuchElementException;
-import java.util.Set;
+import java.util.*;
 
 public class BrowserUtils {
     public static void verifyTitle(String expectedTitle) {
@@ -69,5 +65,8 @@ public class BrowserUtils {
         Assert.assertEquals(expectedText, element.getText());
     }
 
-
+    //this method helps compare 2 List<String> if they look exactly alike
+    public static boolean verify2ListsOfTextEqual(List<String> expectedList, List<String> actualList ){
+        return Arrays.equals(expectedList.toArray(),actualList.toArray());
+    }
 }
