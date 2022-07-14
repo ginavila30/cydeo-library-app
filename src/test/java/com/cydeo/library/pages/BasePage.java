@@ -6,18 +6,15 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
 public class BasePage {
-    public BasePage(){
-        PageFactory.initElements(Driver.getDriver(),this);
+    public BasePage() {
+        PageFactory.initElements(Driver.getDriver(), this);
     }
 
-
-
-    @FindBy (id = "navbarDropdown")
+    @FindBy(id = "navbarDropdown")
     private WebElement accountHolderName;
 
     public WebElement getAccountHolderName() {
         return accountHolderName;
     }
-
 
 }
